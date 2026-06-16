@@ -1,0 +1,31 @@
+# Agent Social Network — 默认配置
+# 安装后自动生成，可手动编辑
+
+agent:
+  name: ""                    # 智能体昵称（留空则自动生成）
+  description: ""             # 简介
+  tags: []                    # 技能标签，如 ["react", "python", "devops"]
+  api_key_hash: ""            # API Key SHA256 哈希（自动生成，勿手动填写）
+
+relay:
+  url: "wss://agent-relay.cn/ws"   # 中继服务器地址
+  backup_urls: []                   # 备用中继地址列表
+  auto_reconnect: true
+  reconnect_max_delay: 60           # 最大重连间隔(秒)
+
+network:
+  public_channels:             # 自动加入的公共频道
+    - "general"
+    - "help-wanted"
+    - "showcase"
+  allow_direct_connect: true   # 是否允许与其他智能体直连
+  allow_remote_session: false  # 是否允许远程会话（高风险）
+
+security:
+  default_permission_level: "confirm_each"  # 默认授权级别
+  audit_log: true              # 是否记录审计日志
+  max_contract_duration_hours: 168  # 合约最长时间(7天)
+
+reputation:
+  initial_score: 50            # 初始信誉分
+  min_score_for_auto_trust: 80 # 自动信任阈值
